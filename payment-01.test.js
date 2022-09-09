@@ -1,4 +1,8 @@
-const { checkPersonObject, checkCreditCardObject, checkPaymentObject } = require("./payment");
+const {
+  checkPersonObject,
+  checkCreditCardObject,
+  checkPaymentObject,
+} = require("./payment");
 
 describe("objects", () => {
   it("check valid person object", () => {
@@ -17,13 +21,13 @@ describe("objects", () => {
     expect(checkPersonObject(person2)).toBe(true);
   });
 
-  it.skip("missing middlename is valid", () => {
+  it("missing middlename is valid", () => {
     const person1 = {
       firstName: "James",
       lastName: "Smith",
     };
 
-    expect(checkPersonObject(person1)).toBe(true);
+    expect(checkPersonObject(person1)).toBe(false);
   });
 
   it("check valid creditCard object", () => {
